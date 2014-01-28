@@ -35,3 +35,6 @@ nosetests.xml
 # vendor
 remoto/lib/vendor/execnet
 execnet
+
+/nbproject
+
