@@ -54,9 +54,9 @@ class Connection(object):
     def _make_connection_string(self, hostname, _needs_ssh=None, use_sudo=None):
         _needs_ssh = _needs_ssh or needs_ssh
         if use_sudo is not None:
-            interpreter = 'sudo python' if use_sudo else 'python'
+            interpreter = 'sudo python2' if use_sudo else 'python2'
         else:
-            interpreter = 'sudo python' if self.sudo else 'python'
+            interpreter = 'sudo python2' if self.sudo else 'python2'
         if _needs_ssh(hostname):
             return 'ssh=%s//python=%s' % (hostname, interpreter)
         return 'popen//python=%s' % interpreter
